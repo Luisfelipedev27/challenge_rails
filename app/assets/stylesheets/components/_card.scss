@@ -1,0 +1,86 @@
+.my-card-index{
+  background-color: #bcd0e3;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 1000px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 200px;
+  padding: 35px 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+}
+
+.my-card-show{
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #212529;
+  max-width: 900px;
+  margin: 0 auto 25px auto;
+  overflow: auto;
+  padding: 60px 10px;
+  min-height: 200px;
+  padding: 35px 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.my-card-show-2{
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #212529;
+  
+  margin: 0 auto 25px auto;
+  overflow: auto;
+  padding: 60px 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.my-card-form{
+  background-color: #212529ac;
+  box-shadow: rgba(0, 0, 0, 0.35) 4px 5px 15px;
+  max-width: 380px;
+  margin: 0 auto 25px auto;
+  overflow: auto;
+  min-height: 200px;
+  padding: 35px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.show-container{
+  width: 400px;
+  margin: 0 left;
+  margin-left: 40px;
+  position: fixed;
+}
+
+.profile-card{
+  background-color: #9db7dd;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 25px 25px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid rgba(0, 0, 0, 0.35);
+  }
+  span {
+    font-size: 16px;
+  }
+  p {
+    font-size: 26px;
+  }
+}

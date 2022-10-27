@@ -1,0 +1,22 @@
+.simple-button:link, .simple-button:visited  {
+  text-decoration: underline;
+  color: #000000cc;
+  transition: color 0.2s ease;
+  font-size: 14px;
+}
+
+.simple-button:hover {
+  color: #0054c9fb;
+}
+
+.simple-button-bg:link, .simple-button-bg:visited  {
+  text-decoration: underline;
+  color: #ecececcc;
+  transition: color 0.2s ease;
+  font-size: 16px;
+}
+
+.simple-button-bg:hover {
+  color: #ecececfb;
+}
+

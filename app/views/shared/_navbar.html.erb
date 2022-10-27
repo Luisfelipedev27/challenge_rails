@@ -1,0 +1,41 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon  fixed-top">
+  <div class="container-fluid" style="background-color: #9db7dd;">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <i class="fas fa-user-check"></i>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Municípios", root_path, class: "nav-link text-white" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Novo Município", new_cidadao_path, class: "nav-link text-white" %>
+          </li>
+          <li class="nav-item dropdown">
+            <% if @cidadao.photo.present? %>
+        <%= cl_image_tag @cidadao.photo.key , class: "avatar dropdown-toggle mx-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: "border: 1px solid white" %>
+    <% else %>
+        <%= image_tag "avatar-img.png",class: "avatar dropdown-toggle mx-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+    <% end %>
+            <%# <%= image_tag "avatar-img.png", class: "avatar dropdown-toggle mx-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

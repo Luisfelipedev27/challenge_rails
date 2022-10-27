@@ -1,0 +1,33 @@
+<div class="my-card-index">
+  <h1>Municípios</h1>
+  <div class="justify-between mt-4 mb-2">
+    <a class="simple-button" href="/cidadaos/new" role="button">Adicionar Novo Município</a>
+    <%= form_tag(cidadaos_path, method: :get, style: "display: flex; gap: 6px ") do %>
+      <%= text_field_tag :query,
+                params[:query],
+                as: :nome, class: "form-control"
+              %>
+      <%= submit_tag "Buscar", class: "btn btn-primary", remote: true %>        
+    <% end %>
+  </div>
+  <table class="styled-table-index">
+    <thead>
+      <tr>
+        <th>Nome Completo</th>
+        <th>CPF</th>
+        <th>CNS</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cidadaos.each do |cidadao| %>
+        <tr onclick="location.href='<%= cidadao_path(cidadao) %>'">
+          <td><%= cidadao.nome %> <%= cidadao.sobrenome %></td>
+          <td><%= cidadao.cpf %></td>
+          <td><%= (cidadao.cns) %></td>
+          <td><%= cidadao.status? ? 'Ativo' : 'Inativo' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
