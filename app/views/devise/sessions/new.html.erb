@@ -1,10 +1,11 @@
-
-<div style="padding-top: 150px">
+<section class="vh-100" style="background-color: #508bfc;">
+<div style="padding-top: 180px">
+<h1 class="boas-vindas"> Bem vindo ao Sistema do municipio</h1>
   <div class="my-card-form">
     <h2 class="mb-3">Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" >
       <div class="row">
         <div class="col-12">
           <%= f.input :email,
@@ -33,4 +34,6 @@
 </div>
 
 </div>
+
+</section>
 
