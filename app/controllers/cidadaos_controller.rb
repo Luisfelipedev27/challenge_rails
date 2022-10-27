@@ -4,9 +4,9 @@ class CidadaosController < ApplicationController
   def index
     @cidadao = Cidadao.new
     if params[:query].present?
-      @cidadaos = Cidadao.buscar_por_dados_ou_endereco(params[:query])
+      @cidadaos = Cidadao.buscar_por_dados_ou_endereco(params[:query]).page params[:page]
     else
-      @cidadaos = Cidadao.order('nome').all
+      @cidadaos = Cidadao.order('nome').all.page params[:page]
     end
   end
 

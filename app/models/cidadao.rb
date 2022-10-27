@@ -24,3 +24,4 @@ class Cidadao < ApplicationRecord
       tsearch: { prefix: true }
     }
 end
+
