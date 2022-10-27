@@ -33,7 +33,7 @@ class CidadaosController < ApplicationController
 
     #CidadaoMailer.with(cidadao: @cidadao).email_cadastro.deliver_now!                      
       redirect_to cidadao_path(@cidadao)
-      flash[:notice] = 'Conta cadastrada com sucesso'
+      flash[:notice] = 'Cidadão cadastrada com sucesso'
     else
       render :new
     end
@@ -54,7 +54,7 @@ class CidadaosController < ApplicationController
       #                       )
       #CidadaoMailer.with(cidadao: @cidadao).email_cadastro_atualizado.deliver_now
       redirect_to cidadao_path(@cidadao)
-      flash[:notice] = 'Munícipe atualizado com sucesso.'
+      flash[:notice] = 'Cidadão atualizado com sucesso.'
     else
       render :edit
       flash[:notice] = 'Algo deu errado. Tente novamente mais tarde.'
