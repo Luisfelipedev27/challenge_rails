@@ -1,5 +1,5 @@
 .styled-table-index {
-  border-collapse: collapse;
+  border-collapse: separate;
   margin: 25px 0;
   font-size: 0.9em;
   font-family: sans-serif;
@@ -22,6 +22,7 @@
   border-bottom: 1px solid #2e2e2e;
   transition: background-color 0.2s ease ;
   background-color: #fdfdfd;
+  border-radius: 10px;
 }
 
 .styled-table-index tbody tr:hover {
@@ -38,6 +39,7 @@
   font-family: sans-serif;
   min-width: 860px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  
 }
 
 .styled-table-show {
@@ -75,6 +77,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 350px;
+  
 }
 
 .styled-table-vertical thead tr {

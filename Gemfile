@@ -19,7 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
-
+gem 'cpf_faker'
+gem 'faker'
 
 gem 'sprockets', '3.7.2' # avoid err working with font-awesome 4.5 - corrected in 5.12
 # Use Active Model has_secure_password

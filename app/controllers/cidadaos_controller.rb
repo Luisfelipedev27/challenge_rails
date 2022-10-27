@@ -31,9 +31,9 @@ class CidadaosController < ApplicationController
       #                       body: 'Você foi cadastrado na plataforma de munícipes.'
       #                       )
 
-    CidadaoMailer.with(cidadao: @cidadao).email_cadastro.deliver_now!                      
+    #CidadaoMailer.with(cidadao: @cidadao).email_cadastro.deliver_now!                      
       redirect_to cidadao_path(@cidadao)
-      flash[:notice] = 'Email e sms de confirmação enviados ao munícipe.'
+      flash[:notice] = 'Conta cadastrada com sucesso'
     else
       render :new
     end
@@ -52,7 +52,7 @@ class CidadaosController < ApplicationController
       #                       to: "+55#{@cidadao.telefone}",
       #                       body: 'Seu cadastro foi atualizado na plataforma Munícipes. Por favor, cheque suas informações no seu email. Obrigado.'
       #                       )
-      CidadaoMailer.with(cidadao: @cidadao).email_cadastro_atualizado.deliver_now
+      #CidadaoMailer.with(cidadao: @cidadao).email_cadastro_atualizado.deliver_now
       redirect_to cidadao_path(@cidadao)
       flash[:notice] = 'Munícipe atualizado com sucesso.'
     else

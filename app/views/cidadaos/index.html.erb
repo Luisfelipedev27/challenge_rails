@@ -5,9 +5,9 @@
     <%= form_tag(cidadaos_path, method: :get, style: "display: flex; gap: 6px ") do %>
       <%= text_field_tag :query,
                 params[:query],
-                as: :nome, class: "form-control"
+                as: :nome, class: "form-control", style: "border-radius: 10px;"
               %>
-      <%= submit_tag "Buscar", class: "btn btn-primary", remote: true %>        
+      <%= submit_tag "Buscar", class: "btn btn-primary", style: " border-radius: 5px;", remote: true %>        
     <% end %>
   </div>
   <table class="styled-table-index">
