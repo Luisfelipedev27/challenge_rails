@@ -1,9 +1,9 @@
 <div class="my-card-index">
   <h1>Municípios</h1>
-  <div class="justify-between mt-4 mb-2">
+    <div class="justify-between mt-4 mb-2">
     <a class="simple-button" href="/cidadaos/new" role="button">Adicionar Novo Município</a>
     <%= form_tag(cidadaos_path, method: :get, style: "display: flex; gap: 6px ") do %>
-      <%= text_field_tag :query,
+     <%= text_field_tag :query,
                 params[:query],
                 as: :nome, class: "form-control", style: "border-radius: 10px;"
               %>
@@ -30,9 +30,9 @@
       <% end %>
     </tbody>
   </table>
+  </div>
 </div>
-</div>
+
 <div style="margin-left: 45%">
-<%= paginate @cidadaos, theme: 'bootstrap-5',
-                   pagination_class: "pagination-sm flex-wrap"%>
+    <%= paginate @cidadaos, theme: 'bootstrap-5', pagination_class: "pagination-sm flex-wrap"%>
  </div>

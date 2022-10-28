@@ -3415,3 +3415,131 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 22388)
 
 
+Started GET "/" for 172.26.0.1 at 2022-10-28 03:48:08 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CidadaosController#index as HTML
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms | Allocations: 2285)
+
+
+Started GET "/users/sign_in" for 172.26.0.1 at 2022-10-28 03:48:09 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 674)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.8ms | Allocations: 16270)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 633)
+  Rendered shared/_flashes.html.erb (Duration: 0.5ms | Allocations: 190)
+Completed 200 OK in 827ms (Views: 816.5ms | ActiveRecord: 4.1ms | Allocations: 1559278)
+
+
+Started POST "/users/sign_in" for 172.26.0.1 at 2022-10-28 03:48:31 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"cKaFQzYZmohul6qS1yyWuEWje2K/EqyRZ3+lQhLx9j/Nm07nNCGN7Djjib9NcoHyJQwi7RWtWIGJ1p1b9cUEGQ==", "user"=>{"email"=>"luisfelipe1582@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "luisfelipe1582@hotmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 258ms (ActiveRecord: 2.7ms | Allocations: 6001)
+
+
+Started GET "/" for 172.26.0.1 at 2022-10-28 03:48:31 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CidadaosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cidadaos/index.html.erb within layouts/application
+  [1m[36mCidadao Load (1.0ms)[0m  [1m[34mSELECT "cidadaos".* FROM "cidadaos" ORDER BY nome LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/cidadaos/index.html.erb:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "cidadaos"[0m
+  ↳ app/views/cidadaos/index.html.erb:36
+  Rendered cidadaos/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 7142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 9.2ms | Allocations: 5677)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 27)
+Completed 200 OK in 45ms (Views: 24.7ms | ActiveRecord: 6.6ms | Allocations: 36473)
+
+
+Started GET "/cidadaos?query=Luis+Felipe&commit=Buscar" for 172.26.0.1 at 2022-10-28 03:48:40 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CidadaosController#index as HTML
+  Parameters: {"query"=>"Luis Felipe", "commit"=>"Buscar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cidadaos/index.html.erb within layouts/application
+  [1m[36mCidadao Load (36.1ms)[0m  [1m[34mSELECT "cidadaos".* FROM "cidadaos" INNER JOIN (SELECT "cidadaos"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("cidadaos"."nome"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."sobrenome"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."cpf"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."cns"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."email"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."data_nascimento"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."telefone"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."status"::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_dbd489da86510247274b44::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_4cbd3ed517954606b76776::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_8ecda16fa66a3077a75976::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_b5fbc25148feee74f2c571::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_f3a2eb93ad644ad37bf4b7::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_43afa640dcb3a62332f0c6::text, ''))), (to_tsquery('simple', ''' ' || 'Luis' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Felipe' || ' ''' || ':*')), 0)) AS rank FROM "cidadaos" LEFT OUTER JOIN (SELECT "cidadaos"."id" AS id, "enderecos"."cep"::text AS pg_search_dbd489da86510247274b44, "enderecos"."logradouro"::text AS pg_search_4cbd3ed517954606b76776, "enderecos"."complemento"::text AS pg_search_8ecda16fa66a3077a75976, "enderecos"."bairro"::text AS pg_search_b5fbc25148feee74f2c571, "enderecos"."cidade"::text AS pg_search_f3a2eb93ad644ad37bf4b7, "enderecos"."uf"::text AS pg_search_43afa640dcb3a62332f0c6 FROM "cidadaos" INNER JOIN "enderecos" ON "enderecos"."cidadao_id" = "cidadaos"."id") pg_search_affe55fc61ca93cd22bf9d ON pg_search_affe55fc61ca93cd22bf9d.id = "cidadaos"."id" WHERE ((to_tsvector('simple', coalesce("cidadaos"."nome"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."sobrenome"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."cpf"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."cns"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."email"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."data_nascimento"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."telefone"::text, '')) || to_tsvector('simple', coalesce("cidadaos"."status"::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_dbd489da86510247274b44::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_4cbd3ed517954606b76776::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_8ecda16fa66a3077a75976::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_b5fbc25148feee74f2c571::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_f3a2eb93ad644ad37bf4b7::text, '')) || to_tsvector('simple', coalesce(pg_search_affe55fc61ca93cd22bf9d.pg_search_43afa640dcb3a62332f0c6::text, ''))) @@ (to_tsquery('simple', ''' ' || 'Luis' || ' ''' || ':*') && to_tsquery('simple', ''' ' || 'Felipe' || ' ''' || ':*')))) AS pg_search_b9792a0a3ff09901abdf69 ON "cidadaos"."id" = pg_search_b9792a0a3ff09901abdf69.pg_search_id ORDER BY pg_search_b9792a0a3ff09901abdf69.rank DESC, "cidadaos"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  ↳ app/views/cidadaos/index.html.erb:23
+  Rendered cidadaos/index.html.erb within layouts/application (Duration: 37.9ms | Allocations: 1187)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 1057)
+  Rendered shared/_flashes.html.erb (Duration: 0.2ms | Allocations: 21)
+Completed 200 OK in 57ms (Views: 10.8ms | ActiveRecord: 36.5ms | Allocations: 19431)
+
+
+Started GET "/cidadaos/46" for 172.26.0.1 at 2022-10-28 03:48:41 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CidadaosController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCidadao Load (0.9ms)[0m  [1m[34mSELECT "cidadaos".* FROM "cidadaos" WHERE "cidadaos"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/cidadaos_controller.rb:67:in `set_cidadao'
+  [1m[36mEndereco Load (1.1ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" WHERE "enderecos"."cidadao_id" = $1 LIMIT $2[0m  [["cidadao_id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/cidadaos_controller.rb:14:in `show'
+  Rendering cidadaos/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Cidadao"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/cidadaos/show.html.erb:5
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cidadaos/show.html.erb:6
+  Rendered cidadaos/show.html.erb within layouts/application (Duration: 49.8ms | Allocations: 18201)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 634)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 23)
+Completed 200 OK in 104ms (Views: 52.2ms | ActiveRecord: 19.0ms | Allocations: 41841)
+
+
+Started GET "/cidadaos/new" for 172.26.0.1 at 2022-10-28 03:48:50 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CidadaosController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cidadaos/new.html.erb within layouts/application
+  Rendered cidadaos/_form.html.erb (Duration: 45.9ms | Allocations: 28071)
+  Rendered cidadaos/new.html.erb within layouts/application (Duration: 46.8ms | Allocations: 28404)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 1056)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 23)
+Completed 200 OK in 58ms (Views: 55.0ms | ActiveRecord: 0.3ms | Allocations: 42505)
+
+
+Started GET "/cidadaos/46/edit" for 172.26.0.1 at 2022-10-28 03:48:54 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CidadaosController#edit as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCidadao Load (0.7ms)[0m  [1m[34mSELECT "cidadaos".* FROM "cidadaos" WHERE "cidadaos"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/cidadaos_controller.rb:67:in `set_cidadao'
+  Rendering cidadaos/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "Cidadao"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/cidadaos/_form.html.erb:57
+  [1m[36mEndereco Load (0.3ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" WHERE "enderecos"."cidadao_id" = $1 LIMIT $2[0m  [["cidadao_id", 46], ["LIMIT", 1]]
+  ↳ app/views/cidadaos/_form.html.erb:65
+  Rendered cidadaos/_form.html.erb (Duration: 31.2ms | Allocations: 27044)
+  Rendered cidadaos/edit.html.erb within layouts/application (Duration: 42.3ms | Allocations: 27253)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_navbar.html.erb:22
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 1513)
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 62ms (Views: 51.3ms | ActiveRecord: 2.7ms | Allocations: 42238)
+
+
+Started GET "/cidadaos/new" for 172.26.0.1 at 2022-10-28 03:49:01 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CidadaosController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cidadaos/new.html.erb within layouts/application
+  Rendered cidadaos/_form.html.erb (Duration: 30.3ms | Allocations: 24220)
+  Rendered cidadaos/new.html.erb within layouts/application (Duration: 30.8ms | Allocations: 24312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 1049)
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 21)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 0.3ms | Allocations: 38256)
+
+
